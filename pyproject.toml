@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ini-stack-audit"
+version = "0.1.0"
+description = "Audit ConfigParser overlay provenance and typed access contracts"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "KanadeK"}]
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Repository = "https://github.com/KanadeK/ini-stack-audit"
+Issues = "https://github.com/KanadeK/ini-stack-audit/issues"
+
+[project.scripts]
+ini-stack-audit = "ini_stack_audit.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "ruff==0.14.2", "build==1.3.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

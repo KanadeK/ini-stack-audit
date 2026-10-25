@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "checks": [
+    {"section": "server", "option": "port", "type": "int", "min": 1, "max": 65535},
+    {"section": "server", "option": "debug", "type": "bool"},
+    {"section": "worker", "option": "concurrency", "type": "int", "min": 1, "max": 64}
+  ]
+}
